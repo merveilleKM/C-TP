@@ -1,0 +1,37 @@
+#include "client.h"
+
+Client::Client()
+{
+    _idclient = "OCEAN11";
+    _nom = "KOUOMO";
+    _prenom = "Merveille";
+}
+
+Client::Client(std::string id, std::string nom, std::string prenom) : _idclient(id), 
+    _nom(nom), _prenom(prenom){}
+
+std::string Client::idClient() const
+{
+    return _idclient;
+}
+std::string Client::nom() const
+{
+    return _nom;
+}
+std::string Client::prenom() const
+{
+    return _prenom;
+}
+
+void Client::updateIdClient(std::string idclient)
+{
+    _idclient = idclient;
+}
+void Client::updateNom(std::string nom)
+{
+    _nom = nom;
+}
+void Client::updatePrenom(std::string prenom)
+{
+    _prenom = prenom;
+}
