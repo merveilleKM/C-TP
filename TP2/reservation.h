@@ -17,7 +17,18 @@ private:
     Client _idclient;
     double _montant;
 public:
-    Reservation(/* args */);
+    Reservation(Date datedebut, int nbnuit, Hotel idhotel, Chambre idchambre, Client idclient, double montant);
+
+    double montantTotal() const;
+    int getNbNuit() const;
+    Date getDateDebut() const;
+    Hotel getIdHotel() const;
+    Chambre getIdChambre() const;
+    Client getIdClient() const;
+    double getMontant() const;
+
+    void updateNbNuit(int nbnuit);
+    void updateDateDebut(Date datedebut);
 };
 
 #endif

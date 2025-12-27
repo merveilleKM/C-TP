@@ -8,13 +8,20 @@
 class Hotel
 {
 private:
-    std::string _idHotel;
+    std::string _idhotel;
     std::string _nom;
     std::string _ville;
-    std::vector<Chambre> _nbChambre;
+    std::vector<Chambre> _chambres;
 
 public:
-    Hotel();
+    Hotel(std::string idhotel, std::string nom, std::string ville);
+    
+
+    int nbChambres() const;
+    void addChambre(Chambre& chambre);
+    void removeChambre(Chambre& chambre);
+    std::string showChambre();
 };
+
 
 #endif

@@ -8,11 +8,21 @@
 class Chambre
 {
 private:
-    int _nbChambre;
-    TypeChambre _type;
-    double _prix;
+    int _numchambre;
+    std::string _typechambre;
+    //TypeChambre _typechambre;
+    double _prixchambre;
 public:
-    Chambre(/* args */);
+    Chambre(int numchambre, std::string type, double prix);
+    bool isAvaible();
+    int numChambre() const;
+    std::string typeChambre() const;
+    double prixChambre() const;
+    std::string afficheChambre() const;
+
+    void updateNumChambre(int numchambre);
+    void updateTypeChambre(std::string typechambre);
+    void updatePrixChambre(double prix);
 };
 
 #endif

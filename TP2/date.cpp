@@ -12,13 +12,13 @@ Date::Date(int jour, int mois, int annee) : _jour(jour), _mois(mois), _annee(ann
     if (!isDate(jour, mois, annee))
     {
         throw std::invalid_argument("Argument invalide : " 
-            + std::to_string(jour) + " / " + std::to_string(mois));
+            + std::to_string(jour) + " / " + std::to_string(mois) + " / " + std::to_string(annee));
     }
 }
 
 bool Date::isDate(int jour, int mois, int annee) 
 {
-    if ((jour < 1) || (jour>31)) return false;
+    if ((jour < 1) || (jour>31) || (annee<2025)) return false;
     if ((mois <1) || (mois>12)) return false;
     if ((mois == 2) && (jour > 28)) return false;
     if (((mois == 4) || (mois == 6) ||(mois == 9)
