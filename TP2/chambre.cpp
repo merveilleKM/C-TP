@@ -1,9 +1,12 @@
 #include "chambre.h"
 
-Chambre::Chambre(int numchambre, std::string type, double prix) : _numchambre(numchambre),
-_typechambre(type), _prixchambre(prix)
+Chambre::Chambre(std::string type) 
 {
-
+    static int c = 1;
+    _numchambre = c;
+    _typechambre = type;
+    _prixchambre = prixChambre(type);
+    c++;
 }
 
 int Chambre::numChambre() const
@@ -14,9 +17,18 @@ std::string Chambre::typeChambre() const
 {
     return _typechambre;
 }
-double Chambre::prixChambre() const
+double Chambre::prixChambre(std::string type) const
 {
-    return _prixchambre;
+    if (type == "Single")
+    {
+        return 100;
+    } else if (type == "Double")
+    {
+        return 125;
+    } else
+    {
+        return 210;
+    }
 }
 
 std::string Chambre::afficheChambre() const
@@ -36,4 +48,10 @@ void Chambre::updateTypeChambre(std::string typechambre)
 void Chambre::updatePrixChambre(double prix)
 {
     _prixchambre = prix;
+}
+
+std::ostream& operator<< (std::ostream& os, const Chambre& chb)
+{
+    os << "La chambre numero " << chb._numchambre << " a";
+    return os;
 }

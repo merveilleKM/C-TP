@@ -17,6 +17,8 @@ public:
     std::string nom() const;
     std::string prenom() const;
 
+    std::string afficherClient() const;
+
     void updateIdClient(std::string idclient);
     void updateNom(std::string nom);
     void updatePrenom(std::string prenom);

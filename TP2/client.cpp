@@ -10,6 +10,11 @@ Client::Client()
 Client::Client(std::string id, std::string nom, std::string prenom) : _idclient(id), 
     _nom(nom), _prenom(prenom){}
 
+
+std::string Client::afficherClient() const 
+{
+    return "Le client ayant l'ID " + _idclient +  " a pour nom " + _nom + " et prenom " + _prenom;
+}
 std::string Client::idClient() const
 {
     return _idclient;
