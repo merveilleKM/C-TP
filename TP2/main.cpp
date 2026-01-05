@@ -37,6 +37,7 @@ int main()
     awae.addClient(cl2);
 
     std::cout << awae.searchClient("OUOMO");
+    std::cout << awae.showClient();
 
     return 0;
 }

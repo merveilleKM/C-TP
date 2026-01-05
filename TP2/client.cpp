@@ -19,11 +19,11 @@ std::string Client::idClient() const
 {
     return _idclient;
 }
-std::string Client::nom() const
+const std::string& Client::nom() const
 {
     return _nom;
 }
-std::string Client::prenom() const
+const std::string& Client::prenom() const
 {
     return _prenom;
 }
@@ -39,4 +39,9 @@ void Client::updateNom(std::string nom)
 void Client::updatePrenom(std::string prenom)
 {
     _prenom = prenom;
+}
+
+bool Client::operator == (const Client& client) const
+{
+    return _idclient == client.idClient() && _nom == client.nom() && _prenom == client.prenom();
 }

@@ -14,14 +14,17 @@ public:
     Client();
     Client(std::string id, std::string nom, std::string prenom);
     std::string idClient() const;
-    std::string nom() const;
-    std::string prenom() const;
+    const std::string& nom() const;
+    const std::string& prenom() const;
 
     std::string afficherClient() const;
 
     void updateIdClient(std::string idclient);
     void updateNom(std::string nom);
     void updatePrenom(std::string prenom);
+
+    bool operator == (const Client& clt) const;
+
 };
 
 #endif

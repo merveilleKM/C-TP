@@ -26,6 +26,8 @@ public:
     std::string showChambre() const;
     std::string showClient() const;
     std::string searchClient (std::string nom);
+    bool operator == (const Client& clt) const;
+    
     friend std::ostream& operator<<(std::ostream& os, const Hotel& ht);
 };
 

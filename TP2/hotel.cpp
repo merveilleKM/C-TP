@@ -13,6 +13,13 @@ void Hotel::addChambre(Chambre& chambre)
 
 void Hotel::addClient(Client& client)
 {
+    for (const auto& cl : _clients)
+    {
+        if (client.operator==(cl))
+        {
+            
+        }
+    }
     _clients.push_back(client);
 }
 
@@ -43,13 +50,32 @@ std::string Hotel::showChambre() const
 
 std::string Hotel::searchClient (std::string nom)
 {
+    bool tmp = false;
     for (const auto& cl : _clients)
     {
         if (cl.nom() == nom)
         {
-            return cl.afficherClient();
+            tmp = true;
         }
     }
+    if (tmp)
+    {
+        for (const auto& cl : _clients)
+        {
+            if (cl.nom() == nom)
+            {
+             return cl.afficherClient();
+            }
+        }
+    } else
+    {
+        Client clt("cl_default", nom, "prenom_defaut");
+        _clients.push_back(clt);
+        return "Utilisateur ajoute avec succes \n";
+    }
+    
+    
+   
     return "Aucun client ayant ce nom existe";
     
 }
@@ -67,6 +93,15 @@ std::string Hotel::showClient() const
     }
     return tmp;
 }
+
+bool Hotel::operator == (const Client& client) const
+{
+    for (const auto& clt : _clients)
+    {
+        return client.operator==(clt);
+    }
+}
+
 
 std::ostream& operator<<(std::ostream& os, const Hotel& ht)
 {
