@@ -29,13 +29,10 @@ const std::string Caesar::encode()
         if (_plain[i] >= 'A' && _plain[i]<= 'Z')
         {
             _plain[i] = (_plain[i] + k -'A')%26+'A';
-            // decode _plain[i] = (_plain[i] - 'A' +k)%26+'A';
-            //_plain[i] = _plain[(i +k -1)%26+1];
         }
         if (_plain[i] >= 'a' && _plain[i]<= 'z')
         {
             _plain[i] = (_plain[i] + k -'a')%26 + 'a';
-            //_plain[i] = _plain[(i +k -1)%26+1];
         }
     }
 
@@ -57,12 +54,10 @@ const std::string Caesar::decode()
     {
         if (_cipher[i] >= 'A' && _cipher[i]<= 'Z')
         {
-            //_cipher[i] = (_cipher[i] + k -'A')%26+'A';
             _cipher[i] = (_cipher[i] - k -'A'+26)%26+'A';
         }
         if (_cipher[i] >= 'a' && _cipher[i]<= 'z')
         {
-            //_cipher[i] = (_cipher[i] + k -'a')%26 + 'a';
             _cipher[i] = (_cipher[i] - k -'a'+26)%26 + 'a';
         }
         

@@ -14,7 +14,7 @@
 # -----------------------------------------------------------
 # Modify the following lines to fit your project
 # SRC_FILES is the list of source files to compile, files are separated by a space.
-SRC_FILES  = main.cpp Encrypt.cpp BasicEncrypt.cpp Caesar.cpp
+SRC_FILES  = main.cpp Encrypt.cpp BasicEncrypt.cpp Caesar.cpp Caesar2.cpp Vigenere.cpp
 #
 # APP is the name of the executable, the executable will be generated into the build directory
 APP        = encrypt
