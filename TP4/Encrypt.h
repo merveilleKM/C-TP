@@ -12,12 +12,12 @@ protected:
 private:
     
 public:
-    Encrypt(/* args */);
-    virtual std::string plain() const;      //afficher message non chiffre
-    virtual std::string cipher() const;      // afficher message chiffre
+    Encrypt(std::string plain, std::string cipher);
+    std::string plain() const;      //afficher message non chiffre
+    std::string cipher() const;      // afficher message chiffre
 
-    std::string encode();           //encodage message non chiffre
-    std::string decode();           //decodage message chiffre
+    virtual const std::string encode() = 0;           //encodage message non chiffre
+    virtual const std::string decode() = 0;           //decodage message chiffre
 };
 
 

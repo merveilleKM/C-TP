@@ -1,33 +1,22 @@
 #include <iostream>
 #include "Encrypt.h"
+#include "BasicEncrypt.h"
+#include "Caesar.h"
 #include <fstream>
 
 int main()
 {
-    std::string monFichier("C:/Users/FTAB TECH/Documents/c++/OOP/TP/C-TP/TP4/Fichiers/toto.txt");
-    //std::fstream  monChemin("Fichiers/toto.txt");
-    // std::cout << f.is_open();
-    //std::ofstream monChemin(monFichier.c_str());
-    
+    //BasicEncrypt be("mama", "papa");
+    Caesar ca("les sanglots longs des violons de l'automne blessent mon coeur d'une langueur monotone", "erqmrxu phuyhlooh",3);
+    std::cout << ca.encode();
+    std::cout << ca.decode();
+
     std::ifstream monChemin("C:/Users/FTAB TECH/Documents/c++/OOP/TP/C-TP/TP4/Fichiers/toto.txt");
-    // double age = 15;
-    // monChemin >> age;
-
-    // std::string texte = "bonjour";
-    // getline(monChemin, texte);
-
-    if (monChemin)
+    std::string ligne;
+    while (getline(monChemin, ligne))
     {
-        std::string ligne;
-       //monChemin << "Je suis merveille, j'ai cree ce fichier pour le TP de C++";
-       while (getline(monChemin, ligne))
-       {
-        std::cout << ligne;
-       }
-       
-    }else
-    {
-        std::cout<< "Erreur";
+        Caesar fichier(ligne, "texte", 3);
+        std::cout << fichier.encode();
     }
     
     
