@@ -21,7 +21,7 @@ int main()
     std::cout << v.encode();
     std::cout << v.decode();
 
-    std::ifstream monChemin("C:/Users/FTAB TECH/Documents/c++/OOP/TP/C-TP/TP4/Fichiers/toto.txt");
+    std::ifstream monChemin("../Fichiers/toto.txt");
     std::string ligne;
     while (getline(monChemin, ligne))
     {
@@ -31,6 +31,9 @@ int main()
         Vigenere vi(ligne,"texte", "mots");
         std::cout << vi.encode();
     }
+
+    // std::ofstream file;
+    // file.open("../Fichiers/toto.txt");
     
     
     return 0;
